@@ -446,168 +446,24 @@
   <script>
     const PRODUCTS = {
       daily: [
-        {
-          id:'SV-D001',
-          name:'Shubhra Rupkatha',
-          price: 999,
-          img:'assets/daily/daily1.jpeg',
-          video:'assets/daily/daily1.mp4',
-          meaning:'Pure white, folk-tale grace',
-          blouseAvailable: false,
-          desc:'Shubhra Rupkatha is a daily-wear treasure woven in purity and tradition. The pristine white cotton base is framed in auspicious vermilion red, echoing Bengal’s eternal palette of festivals. Adorned with folk-art inspired motifs that narrate tales of culture and community, this saree feels like walking with stories etched in every fold. Lightweight, breathable, and deeply rooted in heritage, it is perfect for graceful everyday wear or intimate cultural gatherings.'
-        },
-        {
-          id:'SV-D002',
-          name:'Neel Kamini',
-          price: 1199,
-          img:'assets/daily/daily2.jpeg',
-          video:'assets/daily/daily2.mp4',
-          meaning:'Night jasmine in blue',
-          blouseAvailable: true,
-          desc:'Neel Kamini is woven in fine handloom cotton-silk, giving it the perfect balance of softness and sheen. The deep navy blue body is adorned with golden floral motifs that bloom like night jasmine, while the vibrant vermillion red border frames the saree with festive energy. Lightweight and easy to drape, Neel Kamini is an everyday luxury — perfect for pujas, cultural gatherings, and graceful evenings.'
-        },
-        {
-          id:'SV-D003',
-          name:'Neel Pushpa',
-          price: 1199,
-          img:'assets/daily/daily3.jpeg',
-          video:'assets/daily/daily3.mp4',
-          meaning:'Deep blue, paisley poise',
-          blouseAvailable: true,
-          desc:'Neel Pushpa is woven in rich navy cotton-silk, framed with intricate antique copper-gold zari borders. The paisley-inspired weave adds heritage charm, while the striped pallu gives it a contemporary touch. Lightweight yet regal, this saree flows effortlessly — perfect for office wear, graceful evenings, and festive gatherings.'
-        },
-        {
-          id:'SV-D004',
-          name:'Haritima',
-          price: 2299,
-          img:'assets/daily/daily4.jpeg',
-          video:'assets/daily/daily4.mp4',
-          meaning:'Fresh green, festive glow',
-          blouseAvailable: true,
-          desc:'Haritima brings the vibrancy of Bengal’s handloom heritage in a radiant parrot green cotton-silk weave. The body is adorned with off-white traditional motifs, bordered with antique gold zari and a fine red edge for contrast. Lightweight, breathable, and elegant, this saree is perfect for festive mornings, cultural gatherings, and everyday sophistication.'
-        },
-        {
-          id:'SV-D005',
-          name:'Midnight Varnika',
-          price: 799,
-          img:'assets/daily/daily5.jpeg',
-          video:'assets/daily/daily5.mp4',
-          meaning:'Midnight silk, quiet opulence',
-          blouseAvailable: true,
-          desc:'Midnight Varnika celebrates the elegance of deep blue silk-cotton with a rich zari border. The antique copper tone on the intricate weave glows against the dark body, while bold pallu stripes add modern sophistication. This saree blends tradition and minimalism — perfect for women who like understated luxury.'
-        },
-        {
-          id:'SV-D006',
-          name:'Amrita Pushpi',
-          price: 2199,
-          img:'assets/daily/daily6.jpeg',
-          video:'assets/daily/daily6.mp4',
-          meaning:'Nectar bloom, purple radiance',
-          blouseAvailable: true,
-          desc:'Amrita Pushpi is a deep purple cotton-silk saree that blooms with heritage. The body is adorned with golden floral motifs, each delicately touched with a pink center, creating a contrast of elegance and vibrance. Its golden zari border and pallu complete the look with grandeur. Perfect for festivals, weddings, and special evenings, Amrita Pushpi is a drape that celebrates tradition in a modern way.'
-        },
-        {
-          id:'SV-D007',
-          name:'Madhurima',
-          price: 2099,
-          img:'assets/daily/daily7.jpeg',
-          video:'assets/daily/daily7.mp4',
-          meaning:'Magenta sweetness, regal zari',
-          blouseAvailable: true,
-          desc:'Madhurima is a rich magenta silk saree, woven with golden zari that brings alive motifs of peacocks, florals, and paisleys. Its broad zari border with intricate vines frames the drape with regal charm. Inspired by Banarasi grandeur, this saree is made for weddings, festivities, and moments when you wish to shine with heritage and elegance.'
-        },
-        {
-          id:'SV-D008',
-          name:'Ranga Batik',
-          price: 799,
-          img:'assets/daily/daily8.jpeg',
-          video:'assets/daily/daily8.mp4',
-          meaning:'Hand-dyed canvas of color',
-          blouseAvailable: false,
-          desc:'Ranga Batik celebrates Bengal’s timeless batik hand-dyeing tradition. Made in pure cotton, these sarees are feather-light and easy to drape. The wax-resist motifs give them a rustic, earthy charm, while the bold colors — Red, Maroon, Indigo, and Mustard — make each drape a canvas of heritage. Perfect for daily wear, college, office, and casual festive looks.'
-        },
+        { id:'SV-D001', name:'Shubhra Rupkatha', price: 999, img:'assets/daily/daily1.jpeg', video:'assets/daily/daily1.mp4', meaning:'Pure white, folk-tale grace', blouseAvailable: false, desc:'Shubhra Rupkatha is a daily-wear treasure woven in purity and tradition. The pristine white cotton base is framed in auspicious vermilion red, echoing Bengal’s eternal palette of festivals. Adorned with folk-art inspired motifs that narrate tales of culture and community, this saree feels like walking with stories etched in every fold. Lightweight, breathable, and deeply rooted in heritage, it is perfect for graceful everyday wear or intimate cultural gatherings.' },
+        { id:'SV-D002', name:'Neel Kamini', price: 1199, img:'assets/daily/daily2.jpeg', video:'assets/daily/daily2.mp4', meaning:'Night jasmine in blue', blouseAvailable: true, desc:'Neel Kamini is woven in fine handloom cotton-silk, giving it the perfect balance of softness and sheen. The deep navy blue body is adorned with golden floral motifs that bloom like night jasmine, while the vibrant vermillion red border frames the saree with festive energy. Lightweight and easy to drape, Neel Kamini is an everyday luxury — perfect for pujas, cultural gatherings, and graceful evenings.' },
+        { id:'SV-D003', name:'Neel Pushpa', price: 1199, img:'assets/daily/daily3.jpeg', video:'assets/daily/daily3.mp4', meaning:'Deep blue, paisley poise', blouseAvailable: true, desc:'Neel Pushpa is woven in rich navy cotton-silk, framed with intricate antique copper-gold zari borders. The paisley-inspired weave adds heritage charm, while the striped pallu gives it a contemporary touch. Lightweight yet regal, this saree flows effortlessly — perfect for office wear, graceful evenings, and festive gatherings.' },
+        { id:'SV-D004', name:'Haritima', price: 2299, img:'assets/daily/daily4.jpeg', video:'assets/daily/daily4.mp4', meaning:'Fresh green, festive glow', blouseAvailable: true, desc:'Haritima brings the vibrancy of Bengal’s handloom heritage in a radiant parrot green cotton-silk weave. The body is adorned with off-white traditional motifs, bordered with antique gold zari and a fine red edge for contrast. Lightweight, breathable, and elegant, this saree is perfect for festive mornings, cultural gatherings, and everyday sophistication.' },
+        { id:'SV-D005', name:'Midnight Varnika', price: 799, img:'assets/daily/daily5.jpeg', video:'assets/daily/daily5.mp4', meaning:'Midnight silk, quiet opulence', blouseAvailable: true, desc:'Midnight Varnika celebrates the elegance of deep blue silk-cotton with a rich zari border. The antique copper tone on the intricate weave glows against the dark body, while bold pallu stripes add modern sophistication. This saree blends tradition and minimalism — perfect for women who like understated luxury.' },
+        { id:'SV-D006', name:'Amrita Pushpi', price: 2199, img:'assets/daily/daily6.jpeg', video:'assets/daily/daily6.mp4', meaning:'Nectar bloom, purple radiance', blouseAvailable: true, desc:'Amrita Pushpi is a deep purple cotton-silk saree that blooms with heritage. The body is adorned with golden floral motifs, each delicately touched with a pink center, creating a contrast of elegance and vibrance. Its golden zari border and pallu complete the look with grandeur. Perfect for festivals, weddings, and special evenings, Amrita Pushpi is a drape that celebrates tradition in a modern way.' },
+        { id:'SV-D007', name:'Madhurima', price: 2099, img:'assets/daily/daily7.jpeg', video:'assets/daily/daily7.mp4', meaning:'Magenta sweetness, regal zari', blouseAvailable: true, desc:'Madhurima is a rich magenta silk saree, woven with golden zari that brings alive motifs of peacocks, florals, and paisleys. Its broad zari border with intricate vines frames the drape with regal charm. Inspired by Banarasi grandeur, this saree is made for weddings, festivities, and moments when you wish to shine with heritage and elegance.' },
+        { id:'SV-D008', name:'Ranga Batik', price: 799, img:'assets/daily/daily8.jpeg', video:'assets/daily/daily8.mp4', meaning:'Hand-dyed canvas of color', blouseAvailable: false, desc:'Ranga Batik celebrates Bengal’s timeless batik hand-dyeing tradition. Made in pure cotton, these sarees are feather-light and easy to drape. The wax-resist motifs give them a rustic, earthy charm, while the bold colors — Red, Maroon, Indigo, and Mustard — make each drape a canvas of heritage. Perfect for daily wear, college, office, and casual festive looks.' },
       ],
       party: [
-        {
-          id:'SV-P101',
-          name:'Ranjhnaa Rani Pink Banarasi',
-          price: 2599,
-          img:'assets/party/party1.jpeg',
-          video:'assets/party/party1.mp4',
-          meaning:'Romance in regal pink',
-          blouseAvailable: true,
-          desc:'Step into timeless grandeur with the Ranjhnaa Rani Pink Banarasi Saree. Woven in a bold shade of rani pink, the saree is adorned with delicate golden butis across the body, giving it a royal sparkle. The border carries an intricate floral jaal in pure zari, while the pallu unfolds into a breathtaking lattice of paisleys and blooming flowers, symbolising eternal heritage. Perfect for weddings, festive occasions, or evening celebrations, this saree is a radiant blend of tradition and glamour, designed to make every gaze linger.'
-        },
-        {
-          id:'SV-P102',
-          name:'Neelambari Banarasi',
-          price: 3499,
-          img:'assets/party/party2.jpeg',
-          video:'assets/party/party2.mp4',
-          meaning:'Sky-draped blue, calm regality',
-          blouseAvailable: true,
-          desc:'The Neelambari Banarasi Saree is a vision in turquoise teal, shimmering with rich golden zari butas across the body. Its border carries intricate floral and vine detailing, while the grand pallu reveals a tapestry of paisley and jaal motifs that speak of centuries-old Banaras craftsmanship. A saree that combines freshness of color with regal heritage, making it the perfect choice for weddings, festive nights, and grand celebrations.'
-        },
-        {
-          id:'SV-P103',
-          name:'Raasrang Banarasi',
-          price: 2999,
-          img:'assets/party/party3.jpeg',
-          video:'assets/party/party3.mp4',
-          meaning:'Divine dance in zari',
-          blouseAvailable: true,
-          desc:'Celebrate divine tradition with the Raasrang Banarasi. Woven in vibrant mustard yellow silk, the saree features dainty motifs across the body and a rich red border glowing with zari artistry. The highlight lies in its pallu — a breathtaking tableau of Krishna Raas Leela, woven in golden zari with intricate figures and floral accents. A perfect drape for weddings, temple occasions, and cultural celebrations, Raasrang is heritage woven in threads of devotion and festivity.'
-        },
-        {
-          id:'SV-P104',
-          name:'Meghna Emerald Banarasi',
-          price: 4999,
-          img:'assets/party/party4.jpeg',
-          video:'assets/party/party4.mp4',
-          meaning:'Monsoon green, jewel shimmer',
-          blouseAvailable: true,
-          desc:'Wrap yourself in the elegance of Banaras with the Meghna Emerald Banarasi. Woven in a regal bottle-green base, this saree shines with antique golden zari that highlights every intricate motif. The body is adorned with dainty buta work, while the grand pallu unfolds into a masterpiece — paisley and floral jaal patterns enriched with meenakari hints of turquoise blue. Perfect for weddings, festive nights, or heirloom occasions, this saree is more than attire — it’s heritage reimagined.'
-        },
-        {
-          id:'SV-P105',
-          name:'Surangana Banarasi',
-          price: 2499,
-          img:'assets/party/party5.jpeg',
-          video:'assets/party/party5.mp4',
-          meaning:'Golden muse, sacred glow',
-          blouseAvailable: true,
-          desc:'Radiate traditional elegance with the Surangana Banarasi Saree. The mustard-orange silk body is adorned with golden butis, bringing a soft festive shimmer. The deep red border frames the saree with intricate zari motifs, while the pallu blossoms into grand temple-inspired designs — paisley and floral jaal woven in rich golden zari. A saree that balances devotion and glamour, Surangana is perfect for weddings, pujas, and cultural celebrations.'
-        },
-        {
-          id:'SV-P106',
-          name:'Meghmalhar',
-          price: 4999,
-          img:'assets/party/party6.jpeg',
-          video:'assets/party/party6.mp4',
-          meaning:'Rain raga in silk',
-          blouseAvailable: true,
-          desc:'Meghmalhar is a celebration of Banarasi tradition in wine-purple and teal silk. The body is adorned with dainty golden butis, while the lower half and pallu are richly decorated with paisley and floral jaal, woven in fine golden zari. The box-style design on the pallu adds structure and grandeur, making this saree a perfect choice for festive nights, weddings, and regal gatherings.'
-        },
-        {
-          id:'SV-P107',
-          name:'Shyamoli',
-          price: 5199,
-          img:'assets/party/party7.jpeg',
-          video:'assets/party/party7.mp4',
-          meaning:'Prosperous green, serene shine',
-          blouseAvailable: true,
-          desc:'Shyamoli is a luxurious sea-green silk saree woven with luminous silver-gold zari. The body carries dainty butis that glisten softly, while the border is adorned with delicate floral detailing. The highlight is its magnificent pallu — an intricate panel of lattice-inspired zari work with floral vines, enriched with pink and navy accents that add depth and drama. A drape of prosperity and celebration, Shyamoli is perfect for weddings, receptions, and timeless festivities.'
-        },
-        {
-          id:'SV-P108',
-          name:'Rajmohini',
-          price: 7999,
-          img:'assets/party/party8.jpeg',
-          video:'assets/party/party8.mp4',
-          meaning:'Royal enchantment in magenta',
-          blouseAvailable: true,
-          desc:'Rajmohini is a masterpiece in magenta and navy silk, woven with lavish golden zari in a jaal pattern that exudes grandeur. The dual-tone body symbolizes balance between vibrance and elegance, while the broad intricately woven border frames it with a regal touch. Ideal for weddings, receptions, and grand festive nights, Rajmohini makes you glow with timeless luxury.'
-        },
+        { id:'SV-P101', name:'Ranjhnaa Rani Pink Banarasi', price: 2599, img:'assets/party/party1.jpeg', video:'assets/party/party1.mp4', meaning:'Romance in regal pink', blouseAvailable: true, desc:'Step into timeless grandeur with the Ranjhnaa Rani Pink Banarasi Saree. Woven in a bold shade of rani pink, the saree is adorned with delicate golden butis across the body, giving it a royal sparkle. The border carries an intricate floral jaal in pure zari, while the pallu unfolds into a breathtaking lattice of paisleys and blooming flowers, symbolising eternal heritage. Perfect for weddings, festive occasions, or evening celebrations, this saree is a radiant blend of tradition and glamour, designed to make every gaze linger.' },
+        { id:'SV-P102', name:'Neelambari Banarasi', price: 3499, img:'assets/party/party2.jpeg', video:'assets/party/party2.mp4', meaning:'Sky-draped blue, calm regality', blouseAvailable: true, desc:'The Neelambari Banarasi Saree is a vision in turquoise teal, shimmering with rich golden zari butas across the body. Its border carries intricate floral and vine detailing, while the grand pallu reveals a tapestry of paisley and jaal motifs that speak of centuries-old Banaras craftsmanship. A saree that combines freshness of color with regal heritage, making it the perfect choice for weddings, festive nights, and grand celebrations.' },
+        { id:'SV-P103', name:'Raasrang Banarasi', price: 2999, img:'assets/party/party3.jpeg', video:'assets/party/party3.mp4', meaning:'Divine dance in zari', blouseAvailable: true, desc:'Celebrate divine tradition with the Raasrang Banarasi. Woven in vibrant mustard yellow silk, the saree features dainty motifs across the body and a rich red border glowing with zari artistry. The highlight lies in its pallu — a breathtaking tableau of Krishna Raas Leela, woven in golden zari with intricate figures and floral accents. A perfect drape for weddings, temple occasions, and cultural celebrations, Raasrang is heritage woven in threads of devotion and festivity.' },
+        { id:'SV-P104', name:'Meghna Emerald Banarasi', price: 4999, img:'assets/party/party4.jpeg', video:'assets/party/party4.mp4', meaning:'Monsoon green, jewel shimmer', blouseAvailable: true, desc:'Wrap yourself in the elegance of Banaras with the Meghna Emerald Banarasi. Woven in a regal bottle-green base, this saree shines with antique golden zari that highlights every intricate motif. The body is adorned with dainty buta work, while the grand pallu unfolds into a masterpiece — paisley and floral jaal patterns enriched with meenakari hints of turquoise blue. Perfect for weddings, festive nights, or heirloom occasions, this saree is more than attire — it’s heritage reimagined.' },
+        { id:'SV-P105', name:'Surangana Banarasi', price: 2499, img:'assets/party/party5.jpeg', video:'assets/party/party5.mp4', meaning:'Golden muse, sacred glow', blouseAvailable: true, desc:'Radiate traditional elegance with the Surangana Banarasi Saree. The mustard-orange silk body is adorned with golden butis, bringing a soft festive shimmer. The deep red border frames the saree with intricate zari motifs, while the pallu blossoms into grand temple-inspired designs — paisley and floral jaal woven in rich golden zari. A saree that balances devotion and glamour, Surangana is perfect for weddings, pujas, and cultural celebrations.' },
+        { id:'SV-P106', name:'Meghmalhar', price: 4999, img:'assets/party/party6.jpeg', video:'assets/party/party6.mp4', meaning:'Rain raga in silk', blouseAvailable: true, desc:'Meghmalhar is a celebration of Banarasi tradition in wine-purple and teal silk. The body is adorned with dainty golden butis, while the lower half and pallu are richly decorated with paisley and floral jaal, woven in fine golden zari. The box-style design on the pallu adds structure and grandeur, making this saree a perfect choice for festive nights, weddings, and regal gatherings.' },
+        { id:'SV-P107', name:'Shyamoli', price: 5199, img:'assets/party/party7.jpeg', video:'assets/party/party7.mp4', meaning:'Prosperous green, serene shine', blouseAvailable: true, desc:'Shyamoli is a luxurious sea-green silk saree woven with luminous silver-gold zari. The body carries dainty butis that glisten softly, while the border is adorned with delicate floral detailing. The highlight is its magnificent pallu — an intricate panel of lattice-inspired zari work with floral vines, enriched with pink and navy accents that add depth and drama. A drape of prosperity and celebration, Shyamoli is perfect for weddings, receptions, and timeless festivities.' },
+        { id:'SV-P108', name:'Rajmohini', price: 7999, img:'assets/party/party8.jpeg', video:'assets/party/party8.mp4', meaning:'Royal enchantment in magenta', blouseAvailable: true, desc:'Rajmohini is a masterpiece in magenta and navy silk, woven with lavish golden zari in a jaal pattern that exudes grandeur. The dual-tone body symbolizes balance between vibrance and elegance, while the broad intricately woven border frames it with a regal touch. Ideal for weddings, receptions, and grand festive nights, Rajmohini makes you glow with timeless luxury.' },
       ]
     };
 
@@ -645,14 +501,9 @@
     function renderDetail(kind,id){
       const p=(PRODUCTS[kind]||[]).find(x=>x.id===id); if(!p) return;
       const basePitch='This masterpiece is crafted for the woman who adores tradition yet lives in the now. The drape flatters, the weave speaks, and the shimmer ensures every gaze lingers just a moment longer. Make it yours—before the next soirée does.';
-      const waText = [
-        'Hi Siree! I would like to place an order for',
-        p.name + ' (Unique ID: '+p.id+').',
-        p.meaning ? 'Name meaning: '+p.meaning : ''
-      ].filter(Boolean).join(' ');
+      const waText = [ 'Hi Siree! I would like to place an order for', p.name + ' (Unique ID: '+p.id+').', p.meaning ? 'Name meaning: '+p.meaning : '' ].filter(Boolean).join(' ');
       const wa=`https://wa.me/917021779181?text=${encodeURIComponent(waText)}`;
 
-      // Build blouse availability line
       const blouseLine = p.blouseAvailable
         ? '<strong>Blouse piece:</strong> <span style="color:#137a3d;font-weight:700">Available</span> (unstitched). The blouse worn by the model may be for styling/photography only — please check the blouse piece image for the actual design.'
         : '<strong>Blouse piece:</strong> <span style="color:#9b1b1b;font-weight:700">Not included</span>.';
@@ -671,11 +522,12 @@
         <div class="media">
           <img src="${p.img||''}" alt="${p.name}">
           <div>
-            <video src="${p.video||''}" controls playsinline style="background:#0f2037"></video>
+            <video controls playsinline preload="metadata" poster="${p.img||''}" style="background:#0f2037">
+              <source src="${p.video||''}" type="video/mp4">
+            </video>
             <div style="margin-top:14px; font-size:18px">Price: <span class="price">${money(p.price)}</span></div>
             <p style="margin-top:12px; line-height:1.7">${p.desc || basePitch}</p>
 
-            <!-- Saree details block -->
             <div class="specs" aria-label="Saree details">
               <h3>Saree Details</h3>
               <ul>
@@ -696,10 +548,9 @@
 
       detail.classList.add('active'); chime();
 
-      // Smooth scroll directly to the image/video area
       const anchor = detail.querySelector('#media-anchor');
       if(anchor){
-        const y = anchor.getBoundingClientRect().top + window.pageYOffset - 80; // offset for sticky header
+        const y = anchor.getBoundingClientRect().top + window.pageYOffset - 80;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
     }
