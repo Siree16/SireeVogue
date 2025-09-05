@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Siree Vogue — Where Heritage Meets Vogue</title>
+
+  <!-- SEO: IITian-founded description -->
+  <meta name="description" content="Siree Vogue is an IITian-founded Bengali saree house blending engineering-grade quality control with heirloom craft.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Marcellus&family=Playfair+Display:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0b1a2b; --navy-2:#081423;
+      --gold:#d6b26c; --gold-deep:#b89143;
+      --pink:#d85aa6; --emerald:#00c37a;
+      --ring-shadow:0 0 20px rgba(214,178,108,.35), 0 0 60px rgba(214,178,108,.15);
+      --banarasi:url('assets/banarasi-navy.jpg');
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; color:#e9e6ff;
+      background: radial-gradient(1200px 800px at 70% -100px, #142844 0%, var(--navy) 55%, var(--navy-2) 100%);
+      font-family:'Marcellus',serif; overflow-x:hidden;
+    }
+
+    /* Banarasi curtain */
+    .sv-curtain{position:fixed;inset:0;z-index:9999;display:flex;overflow:hidden;pointer-events:none}
+    .sv-curtain-left,.sv-curtain-right{
+      flex:1;position:relative;isolation:isolate;
+      background:
+        radial-gradient(30vw 90vh at 40% 10%, rgba(216,90,166,.22), transparent 60%),
+        radial-gradient(30vw 90vh at 60% 90%, rgba(0,195,122,.2), transparent 60%),
+        var(--banarasi);
+      background-size:cover,cover,900px auto;background-position:center;filter:saturate(118%) contrast(105%);
+      box-shadow:inset 0 0 100px rgba(0,0,0,.55)
+    }
+    .sv-curtain-left:after,.sv-curtain-right:after{
+      content:"";position:absolute;top:0;bottom:0;width:44px;z-index:2;
+      background:repeating-linear-gradient(180deg,#f7e7b6 0 8px,#cda34a 8px 16px);
+      box-shadow:0 0 40px rgba(214,178,108,.55)
+    }
+    .sv-curtain-left:after{right:-2px}.sv-curtain-right:after{left:-2px}
+    .sv-curtain-left:before,.sv-curtain-right:before{
+      content:"";position:absolute;inset:-40% -10%;z-index:3;
+      background:linear-gradient(120deg,transparent 0 40%,rgba(255,255,255,.5) 50%,transparent 60%);
+      transform:translateX(-130%);animation:svShimmer 3s ease-out 1.2s forwards
+    }
+    .sv-curtain-left{animation:svOpenLeft 2.4s ease-in-out forwards}
+    .sv-curtain-right{animation:svOpenRight 2.4s ease-in-out forwards}
+    @keyframes svOpenLeft{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+    @keyframes svOpenRight{from{transform:translateX(0)}to{transform:translateX(100%)}}
+    @keyframes svShimmer{to{transform:translateX(140%)}}
+
+    /* Glitter text utility */
+    .glitter{
+      background-image:
+        radial-gradient(2px 2px at 20% 30%, #fff8, transparent 60%),
+        radial-gradient(1.5px 1.5px at 70% 40%, #fff6, transparent 60%),
+        linear-gradient(110deg,#e5c98a,#f7e7b6 20%,#d1a757 40%,#f7e7b6 60%,#b88934 80%,#e5c98a);
+      background-size:260px 260px,200px 200px,300% 100%;
+      background-position:0 0,50% 50%,0% 0%;
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      animation:glitterShift 8s linear infinite;
+      text-shadow:0 6px 18px rgba(255,230,160,.18),0 0 2px rgba(0,0,0,.5)
+    }
+    @keyframes glitterShift{to{background-position:260px 260px,200px 200px,100% 0%}}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(6px);
+      background:linear-gradient(180deg,rgba(8,20,35,.85) 0%,rgba(8,20,35,.6) 100%);
+      border-bottom:1px solid rgba(214,178,108,.18)}
+    .header-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:220px 1fr 260px;align-items:center;gap:12px;padding:10px 18px}
+    .logo-wrap{display:flex;align-items:center;gap:10px}
+    .logo{width:164px;height:164px;border-radius:50%;background-image:url('logo1.png');background-size:cover;background-position:center;box-shadow:var(--ring-shadow);border:0px solid rgba(214,178,108,.55)}
+    .brand-title{text-align:center}
+    .brand-title h1{margin:0;font-family:'Cinzel',serif;font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:clamp(26px,4vw,44px);line-height:1.1}
+    .tagline{margin-top:6px;font-size:clamp(12px,1.8vw,16px);color:#d7f9ee;font-style:italic;letter-spacing:.06em;opacity:.95}
+    .right-info{text-align:right;font-size:14px}.right-info strong{color:#fff}
+    .chip{display:inline-block;margin-left:8px;padding:6px 10px;border-radius:999px;border:1px solid rgba(214,178,108,.45);box-shadow:inset 0 0 18px rgba(214,178,108,.18);
+      background:radial-gradient(120px 40px at 20% 10%,rgba(255,255,255,.18),transparent 50%),linear-gradient(90deg,rgba(214,178,108,.2),rgba(214,178,108,.05))}
+
+    /* TRUST RIBBON (added) */
+    .trust-ribbon{
+      text-align:center; font-size:14px; letter-spacing:.04em; color:#091628;
+      background:linear-gradient(90deg,#f7e7b6,#d1a757,#f7e7b6);
+      border-top:1px solid rgba(184,137,52,.35); border-bottom:1px solid rgba(184,137,52,.35);
+      box-shadow:0 6px 22px rgba(214,178,108,.35), inset 0 0 18px rgba(255,255,255,.25);
+      padding:8px 14px; font-weight:800; text-transform:uppercase
+    }
+
+    /* HERO */
+    .hero{position:relative;max-width:1200px;margin:28px auto 0;padding:40px 18px 8px}
+
+    /* Fortune Wheel */
+    .lotus-ring{
+      width:240px;height:240px;border-radius:50%;margin:0 auto 24px;border:3px solid transparent;
+      background:
+        radial-gradient(160px 160px at 50% 50%, #0e2137 0%, transparent 70%) padding-box,
+        linear-gradient(160deg,#f6e7bd,#b88934 50%,#f6e7bd) border-box;
+      box-shadow:0 0 0 2px rgba(255,255,255,.03) inset, var(--ring-shadow);
+      position:relative;overflow:visible;isolation:isolate
+    }
+    .lotus-ring::after{
+      content:"";position:absolute;inset:10px;border-radius:50%;
+      background:
+        conic-gradient(from 0deg, #f7e7b680 0 2%, transparent 2% 9%, #f7e7b655 9% 11%, transparent 11% 18%, #f7e7b680 18% 20%, transparent 20% 100%);
+      filter:blur(1px);opacity:.85;animation:spinCW 18s linear infinite
+    }
+    @keyframes spinCW{to{transform:rotate(360deg)}}
+    .lotus-ring::before{
+      content:"";position:absolute;inset:26px;border-radius:50%;
+      background:
+        url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8"?>\
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">\
+          <defs>\
+            <linearGradient id="zg" x1="0" x2="1">\
+              <stop offset="0" stop-color="%23f7e7b6"/><stop offset="1" stop-color="%23b88934"/>\
+            </linearGradient>\
+            <filter id="g" x="-50%" y="-50%" width="200%" height="200%">\
+              <feGaussianBlur stdDeviation="0.8"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>\
+          </defs>\
+          <g fill="none" stroke="url(%23zg)" stroke-width="3" filter="url(%23g)">\
+            <circle cx="110" cy="110" r="90" opacity="0.15"/>\
+            <g stroke-width="4">\
+              <path d="M110 28 C122 45 135 58 110 76 C85 58 98 45 110 28Z"/><path d="M82 36 C95 52 100 70 74 78 C70 52 69 50 82 36Z" transform="rotate(45 110 110)"/>\
+              <path d="M82 36 C95 52 100 70 74 78 C70 52 69 50 82 36Z" transform="rotate(90 110 110)"/>\
+              <path d="M82 36 C95 52 100 70 74 78 C70 52 69 50 82 36Z" transform="rotate(135 110 110)"/>\
+              <path d="M82 36 C95 52 100 70 74 78 C70 52 69 50 82 36Z" transform="rotate(180 110 110)"/>\
+              <path d="M82 36 C95 52 100 70 74 78 C70 52 69 50 82 36Z" transform="rotate(225 110 110)"/>\
+              <path d="M82 36 C95 52 100 70 74 78 C70 52 69 50 82 36Z" transform="rotate(270 110 110)"/>\
+              <path d="M82 36 C95 52 100 70 74 78 C70 52 69 50 82 36Z" transform="rotate(315 110 110)"/>\
+            </g>\
+            <g stroke-width="2.4">\
+              <polygon points="110,50 146,110 74,110" />\
+              <polygon points="110,170 146,110 74,110" />\
+              <polygon points="80,80 140,80 110,132" />\
+              <polygon points="140,140 80,140 110,88" />\
+              <circle cx="110" cy="110" r="54" opacity="0.6"/>\
+              <circle cx="110" cy="110" r="4" fill="%23f7e7b6" stroke="none"/>\
+            </g>\
+          </g>\
+        </svg>') center/contain no-repeat;
+    }
+
+    /* Prosperity band (straight with coins) */
+    .saree-unfold{
+      position:relative;height:68px;width:100%;overflow:hidden;border-radius:12px;
+      background:linear-gradient(90deg, rgba(216,90,166,.35), rgba(216,90,166,.12) 40%, rgba(0,195,122,.22));
+      border:1px solid rgba(216,90,166,.35);
+      box-shadow:0 8px 28px rgba(216,90,166,.22), inset 0 0 30px rgba(255,255,255,.08)
+    }
+    .saree-cloth{
+      position:absolute;top:0;left:-100%;height:100%;width:160%;
+      background: repeating-linear-gradient(0deg,#b88934 0 6px,#e7d099 6px 14px,#b88934 14px 18px,#f7e7b6 18px 24px);
+      filter:drop-shadow(0 12px 20px rgba(0,0,0,.35));
+      animation:bandFlow 3s ease-out forwards .4s
+    }
+    .saree-edge{
+      position:absolute;top:0;left:-100%;height:100%;width:16px;
+      background:linear-gradient(180deg,var(--pink),#ef9fd2 50%,var(--pink));
+      box-shadow:0 0 16px rgba(216,90,166,.5);
+      animation:bandFlow 3s ease-out forwards .4s
+    }
+    @keyframes bandFlow{to{left:0}}
+    .saree-unfold .coins{
+      position:absolute;inset:0;pointer-events:none;background-repeat:repeat-x;background-size:auto 60%;
+      background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="220" height="68">\
+        <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="%23ffe9b3"/><stop offset="1" stop-color="%23cda34a"/></linearGradient></defs>\
+        <g opacity="0.9">\
+          <circle cx="20" cy="34" r="6" fill="url(%23g)"/><circle cx="70" cy="22" r="5" fill="url(%23g)"/><circle cx="120" cy="46" r="7" fill="url(%23g)"/><circle cx="170" cy="28" r="5.5" fill="url(%23g)"/>\
+        </g></svg>');
+      animation:coinsFlow 6s linear infinite
+    }
+    @keyframes coinsFlow{from{background-position:-220px 0}to{background-position:220px 0}}
+
+    /* Intro, grid, detail */
+    .intro{max-width:1000px;margin:24px auto;padding:0 18px;text-align:center}
+    .intro p{font-size:clamp(16px,2.1vw,20px);color:#e9f6ff;line-height:1.8}
+    .intro .gold{color:#ffe7a8}
+    .intro .iit-sub{margin-top:8px;font-size:15px;opacity:.92;color:#ffe9b3}
+    .categories{display:flex;gap:16px;justify-content:center;margin:22px auto 8px}
+    .cat-btn{position:relative;cursor:pointer;border:none;padding:14px 22px;border-radius:12px;font-size:18px;color:#0a1221;letter-spacing:.04em;font-weight:700;text-transform:uppercase;transition:transform .25s ease;background:
+      radial-gradient(10px 10px at 90% 10%, #fff8, transparent 60%),
+      linear-gradient(120deg,#f7e7b6,#d1a757,#f7e7b6);box-shadow:0 10px 26px rgba(214,178,108,.45)}
+    .cat-btn:hover{transform:translateY(-3px) scale(1.02)}
+    .cat-btn.party{background:linear-gradient(120deg,#f7e7b6,#b88934 40%,#f7e7b6 70%),radial-gradient(18px 18px at 80% 10%,#fffc,transparent 60%);color:#111}
+
+    .grid{max-width:1200px;margin:20px auto;padding:0 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(214,178,108,.25);border-radius:18px;overflow:hidden;position:relative;transition:transform .25s ease,box-shadow .25s ease;cursor:pointer;box-shadow:0 10px 28px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.02)}
+    .card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(214,178,108,.25)}
+    .card .img{aspect-ratio:4/5;background:#0f2037;display:block;position:relative}
+    .card .img:before{content:"";position:absolute;inset:0;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="%23f7e7b6"/><stop offset="1" stop-color="%23b88934"/></linearGradient></defs><rect width="600" height="750" fill="%230b1a2b"/><g opacity="0.6"><path d="M0,700 Q300,650 600,720 L600,750 L0,750 Z" fill="url(%23g)"/><path d="M0,620 Q300,520 600,660 L600,750 L0,750 Z" fill="%23d85aa650"/></g><text x="50%" y="52%" text-anchor="middle" fill="%23eae0b0" font-size="34" font-family="Georgia">Saree Image</text></svg>');background-size:cover;filter:saturate(110%)}
+    .card .img.has-photo::before{display:none;}
+    .card .meta{padding:12px 14px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .name{font-weight:700;letter-spacing:.02em}
+    .price{color:#ffeebd;font-weight:900;font-family:'Cinzel',serif}
+
+    .detail{max-width:1000px;margin:28px auto;padding:0 18px;display:none}
+    .detail.active{display:block;animation:fadeIn .4s ease}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}}
+    .detail .media{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+    .detail img,.detail video{width:100%;border-radius:16px;border:1px solid rgba(214,178,108,.25);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .badge{display:inline-block;padding:6px 10px;border:1px solid rgba(214,178,108,.45);border-radius:999px;margin-right:8px;color:#161616;background:linear-gradient(120deg,#f7e7b6,#d1a757,#f7e7b6)}
+    .cta{margin-top:16px}
+    .whatsapp{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;font-weight:800;text-transform:uppercase;border-radius:12px;text-decoration:none;color:#101a2c;letter-spacing:.05em;background:linear-gradient(120deg,#8affc1,#00c37a 50%,#8affc1);box-shadow:0 14px 28px rgba(0,195,122,.3)}
+    .back{margin-top:18px;display:inline-block;color:#def8ee;opacity:.9;text-decoration:underline;cursor:pointer}
+
+    /* Meaning styling */
+    .meaning-line{
+      margin:4px 0 10px;
+      font-family:'Playfair Display',serif;
+      font-size:clamp(14px,1.8vw,18px);
+      color:#ffe9b3;
+      opacity:.95
+    }
+    .meaning-pill{
+      display:inline-block;
+      margin-top:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(214,178,108,.45);
+      background:linear-gradient(120deg,#fff3c4,#e5c98a,#fff3c4);
+      color:#0b1a2b;
+      font-weight:700;
+      letter-spacing:.03em
+    }
+
+    /* NEW: specs block inside product detail */
+    .specs{margin-top:14px;padding:14px;border:1px dashed rgba(214,178,108,.45);border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02))}
+    .specs h3{margin:0 0 8px;font-family:'Cinzel',serif;font-size:18px;color:#ffe9b3}
+    .specs ul{margin:0;padding-left:18px;line-height:1.7}
+    .specs li{margin:2px 0}
+    .policy-note{
+      margin-top:12px;font-size:14px;line-height:1.6;
+      color:#333;background:#fffef8;border-left:3px solid var(--gold);padding:8px 12px;border-radius:6px
+    }
+    .policy-note strong{color:var(--gold-deep)}
+
+    .sparkle{position:fixed;width:4px;height:4px;background:radial-gradient(circle,#fff,rgba(255,255,255,0));border-radius:50%;opacity:.8;pointer-events:none;animation:float 6s linear infinite}
+    @keyframes float{from{transform:translateY(0)}to{transform:translateY(-120vh)}}
+
+    /* >>> Improved: footer styling with high contrast */
+    footer{border-top:1px solid var(--gold);margin-top:40px;padding:18px;text-align:center;background:linear-gradient(180deg,#faf7f1,#f2efe7);color:#2c2c2c;font-size:14.5px;line-height:1.6}
+    footer strong{color:var(--gold-deep)}
+
+    @media (max-width:860px){
+      .header-inner{grid-template-columns:140px 1fr 1fr}
+      .detail .media{grid-template-columns:1fr}
+      .right-info{display:none}
+    }
+
+    /* ----------------------------
+       WHITE ZONE BELOW THE TABS
+       ---------------------------- */
+    .white-section{
+      position:relative;
+      background:#fff;
+      color:#111;
+      margin-top:0;
+      padding:24px 0 0;
+      box-shadow:0 -12px 24px rgba(0,0,0,.06) inset;
+    }
+    .white-section::before{
+      content:"";
+      position:absolute;left:0;right:0;top:-18px;height:18px;
+      background:linear-gradient(180deg, rgba(247,231,182,.6), rgba(255,255,255,0));
+      pointer-events:none;
+    }
+
+    .white-section .grid{padding-top:0}
+    .white-section .card{
+      background:#fff;
+      border:1px solid #e6e2d6;
+      box-shadow:0 8px 20px rgba(0,0,0,.06);
+    }
+    .white-section .card:hover{
+      box-shadow:0 14px 34px rgba(0,0,0,.1);
+    }
+    .white-section .card .img{background:#f6f7f9}
+    .white-section .name{color:#0b1222}
+    .white-section .price{color:#111}
+    .white-section .detail{color:#111}
+    .white-section .detail img,
+    .white-section .detail video{
+      border-color:#e6e2d6;
+      box-shadow:0 8px 24px rgba(0,0,0,.08);
+    }
+    .white-section .meaning-line{color:#5b4a1b}
+    .white-section .back{color:#0b1222;opacity:.9}
+
+    .white-section footer{
+      border-top:1px solid #d1a757;
+      color:#2c2c2c;
+      background:linear-gradient(180deg,#faf7f1,#f2efe7);
+    }
+
+    .service-policy{max-width:1000px;margin:8px auto 0;padding:0 18px 8px}
+    .policy-card{margin-top:12px;border:1px solid #eee5cf;border-radius:14px;padding:14px 16px;background:#fffef8;box-shadow:0 6px 14px rgba(0,0,0,.04)}
+    .policy-card h3{margin:0 0 8px;font-family:'Cinzel',serif;font-size:18px;color:#2c2c2c}
+    .policy-card p{margin:0;line-height:1.7;color:#333;font-size:15px}
+    .policy-card strong{color:var(--gold-deep)}
+
+    /* ----------------------------
+       ✨ REFINED PRODUCT DETAIL CARD
+       ---------------------------- */
+    .white-section .detail {
+      background:#fff;
+      padding:32px;
+      border-radius:20px;
+      box-shadow:0 8px 28px rgba(0,0,0,.06);
+      margin:32px auto;
+      max-width:1100px;
+      color:#222;
+    }
+    .white-section .detail .media{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:28px;
+      align-items:start;
+    }
+    .white-section .detail h2{
+      font-size:clamp(24px,3vw,36px);
+      margin:12px 0 18px;
+      color:#2c2c2c;
+      font-family:'Cinzel',serif;
+    }
+    .white-section .detail .price{
+      font-size:22px;
+      font-weight:800;
+      color:#b89143;
+      font-family:'Cinzel',serif;
+    }
+    .white-section .detail .specs{
+      background:#fafafa;
+      border:1px solid #e6e2d6;
+      padding:16px 20px;
+      border-radius:14px;
+      margin-top:20px;
+    }
+    .white-section .detail .specs h3{
+      font-size:18px;
+      margin-bottom:10px;
+      color:#444;
+    }
+    .white-section .detail .cta{margin-top:22px}
+    .white-section .detail .whatsapp{
+      border-radius:14px;
+      font-size:15px;
+      padding:14px 20px;
+      background:linear-gradient(120deg,#8affc1,#00c37a 60%,#8affc1);
+      color:#fff !important;
+      box-shadow:0 6px 18px rgba(0,195,122,.35);
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .white-section .detail .whatsapp:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 26px rgba(0,195,122,.45);
+    }
+    .white-section .detail .back{
+      margin-top:28px;
+      font-size:15px;
+      color:#444;
+      cursor:pointer;
+      transition:color .2s;
+      text-decoration:none;
+    }
+    .white-section .detail .back:hover{color:#b89143}
+  </style>
+</head>
+<body>
+  <!-- Curtain overlay -->
+  <div class="sv-curtain" aria-hidden="true">
+    <div class="sv-curtain-left"></div>
+    <div class="sv-curtain-right"></div>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo-wrap"><div class="logo" title="Siree Vogue"></div></div>
+      <div class="brand-title">
+        <h1 class="glitter">Siree&nbsp;Vogue</h1>
+        <div class="tagline">“Where Heritage Meets Vogue.”</div>
+        <div class="tagline" style="margin-top:4px;color:#ffe9b3">Heritage, powered by an IITian’s obsession for quality.</div>
+      </div>
+      <div class="right-info">
+        <div><strong>Owner:</strong> <span class="chip">Siree</span></div>
+        <div style="margin-top:6px"><strong>Contact:</strong> <span class="chip">+91&nbsp;7021779181</span></div>
+      </div>
+    </div>
+    <div class="trust-ribbon">IITian-led curation • Authentic Bengal weaves • Quality you can measure.</div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Hero">
+      <div class="lotus-ring" aria-label="Sri Yantra Fortune Wheel"></div>
+
+      <div class="saree-unfold" aria-hidden="true">
+        <div class="saree-edge"></div>
+        <div class="saree-cloth"></div>
+        <div class="coins"></div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <p>
+        <span class="glitter" style="font-family:'Playfair Display', serif; font-size:clamp(20px,3.2vw,30px); display:block; margin-bottom:10px">Welcome to Siree Vogue</span>
+        We are a premium luxury Bengali saree house celebrating time-honoured weaves and contemporary silhouettes. Our collections are curated with an eye for <span class="gold">glittering artistry</span>, hand-finished details and sumptuous fabrics that drape like poetry.
+      </p>
+      <p>
+        Rooted in Bengal’s rich textile heritage—tangail, jamdani, baluchari and resplendent banarasi influences—each Siree Saree embodies <span style="color:var(--emerald)">grace</span>, <span style="color:var(--pink)">femininity</span> and a modern sense of <span class="gold">Vogue</span>.
+      </p>
+      <p class="iit-sub">From algorithms to artisanal weaves—curated by IITian.</p>
+    </section>
+
+    <section class="categories">
+      <button class="cat-btn daily" data-cat="daily">Daily Wear</button>
+      <button class="cat-btn party" data-cat="party">Party Wear</button>
+    </section>
+
+    <!-- PURE WHITE BACKGROUND STARTS HERE -->
+    <div class="white-section">
+      <section id="grid" class="grid" aria-live="polite"></section>
+      <section id="detail" class="detail" aria-live="polite"></section>
+
+      <!-- NEW: Site-wide Delivery & Returns (polite) -->
+      <section class="service-policy" aria-label="Delivery & Returns">
+        <div class="policy-card">
+          <h3>Delivery & Returns</h3>
+          <p>
+            We’re delighted to offer <strong>free same-day delivery</strong> wherever feasible. As the founder personally hand-delivers your saree and helps you <strong>verify the product at the doorstep</strong>,
+            <strong>returns are not accepted after delivery confirmation</strong>. Have a question before you order? Message us on WhatsApp — we’ll guide you with care.
+          </p>
+        </div>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Siree Vogue · IITian-founded • Authenticity guaranteed • Easy WhatsApp orders. · For orders WhatsApp <strong>+91 7021779181</strong> (8am–9pm)
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    const PRODUCTS = {
+      daily: [
+        {
+          id:'SV-D001',
+          name:'Shubhra Rupkatha',
+          price: 999,
+          img:'assets/daily/daily1.jpeg',
+          video:'assets/daily/daily1.mp4',
+          meaning:'Pure white, folk-tale grace',
+          blouseAvailable: false,
+          desc:'Shubhra Rupkatha is a daily-wear treasure woven in purity and tradition. The pristine white cotton base is framed in auspicious vermilion red, echoing Bengal’s eternal palette of festivals. Adorned with folk-art inspired motifs that narrate tales of culture and community, this saree feels like walking with stories etched in every fold. Lightweight, breathable, and deeply rooted in heritage, it is perfect for graceful everyday wear or intimate cultural gatherings.'
+        },
+        {
+          id:'SV-D002',
+          name:'Neel Kamini',
+          price: 1199,
+          img:'assets/daily/daily2.jpeg',
+          video:'assets/daily/daily2.mp4',
+          meaning:'Night jasmine in blue',
+          blouseAvailable: true,
+          desc:'Neel Kamini is woven in fine handloom cotton-silk, giving it the perfect balance of softness and sheen. The deep navy blue body is adorned with golden floral motifs that bloom like night jasmine, while the vibrant vermillion red border frames the saree with festive energy. Lightweight and easy to drape, Neel Kamini is an everyday luxury — perfect for pujas, cultural gatherings, and graceful evenings.'
+        },
+        {
+          id:'SV-D003',
+          name:'Neel Pushpa',
+          price: 1199,
+          img:'assets/daily/daily3.jpeg',
+          video:'assets/daily/daily3.mp4',
+          meaning:'Deep blue, paisley poise',
+          blouseAvailable: true,
+          desc:'Neel Pushpa is woven in rich navy cotton-silk, framed with intricate antique copper-gold zari borders. The paisley-inspired weave adds heritage charm, while the striped pallu gives it a contemporary touch. Lightweight yet regal, this saree flows effortlessly — perfect for office wear, graceful evenings, and festive gatherings.'
+        },
+        {
+          id:'SV-D004',
+          name:'Haritima',
+          price: 2299,
+          img:'assets/daily/daily4.jpeg',
+          video:'assets/daily/daily4.mp4',
+          meaning:'Fresh green, festive glow',
+          blouseAvailable: true,
+          desc:'Haritima brings the vibrancy of Bengal’s handloom heritage in a radiant parrot green cotton-silk weave. The body is adorned with off-white traditional motifs, bordered with antique gold zari and a fine red edge for contrast. Lightweight, breathable, and elegant, this saree is perfect for festive mornings, cultural gatherings, and everyday sophistication.'
+        },
+        {
+          id:'SV-D005',
+          name:'Midnight Varnika',
+          price: 799,
+          img:'assets/daily/daily5.jpeg',
+          video:'assets/daily/daily5.mp4',
+          meaning:'Midnight silk, quiet opulence',
+          blouseAvailable: true,
+          desc:'Midnight Varnika celebrates the elegance of deep blue silk-cotton with a rich zari border. The antique copper tone on the intricate weave glows against the dark body, while bold pallu stripes add modern sophistication. This saree blends tradition and minimalism — perfect for women who like understated luxury.'
+        },
+        {
+          id:'SV-D006',
+          name:'Amrita Pushpi',
+          price: 2199,
+          img:'assets/daily/daily6.jpeg',
+          video:'assets/daily/daily6.mp4',
+          meaning:'Nectar bloom, purple radiance',
+          blouseAvailable: true,
+          desc:'Amrita Pushpi is a deep purple cotton-silk saree that blooms with heritage. The body is adorned with golden floral motifs, each delicately touched with a pink center, creating a contrast of elegance and vibrance. Its golden zari border and pallu complete the look with grandeur. Perfect for festivals, weddings, and special evenings, Amrita Pushpi is a drape that celebrates tradition in a modern way.'
+        },
+        {
+          id:'SV-D007',
+          name:'Madhurima',
+          price: 2099,
+          img:'assets/daily/daily7.jpeg',
+          video:'assets/daily/daily7.mp4',
+          meaning:'Magenta sweetness, regal zari',
+          blouseAvailable: true,
+          desc:'Madhurima is a rich magenta silk saree, woven with golden zari that brings alive motifs of peacocks, florals, and paisleys. Its broad zari border with intricate vines frames the drape with regal charm. Inspired by Banarasi grandeur, this saree is made for weddings, festivities, and moments when you wish to shine with heritage and elegance.'
+        },
+        {
+          id:'SV-D008',
+          name:'Ranga Batik',
+          price: 799,
+          img:'assets/daily/daily8.jpeg',
+          video:'assets/daily/daily8.mp4',
+          meaning:'Hand-dyed canvas of color',
+          blouseAvailable: false,
+          desc:'Ranga Batik celebrates Bengal’s timeless batik hand-dyeing tradition. Made in pure cotton, these sarees are feather-light and easy to drape. The wax-resist motifs give them a rustic, earthy charm, while the bold colors — Red, Maroon, Indigo, and Mustard — make each drape a canvas of heritage. Perfect for daily wear, college, office, and casual festive looks.'
+        },
+      ],
+      party: [
+        {
+          id:'SV-P101',
+          name:'Ranjhnaa Rani Pink Banarasi',
+          price: 2599,
+          img:'assets/party/party1.jpeg',
+          video:'assets/party/party1.mp4',
+          meaning:'Romance in regal pink',
+          blouseAvailable: true,
+          desc:'Step into timeless grandeur with the Ranjhnaa Rani Pink Banarasi Saree. Woven in a bold shade of rani pink, the saree is adorned with delicate golden butis across the body, giving it a royal sparkle. The border carries an intricate floral jaal in pure zari, while the pallu unfolds into a breathtaking lattice of paisleys and blooming flowers, symbolising eternal heritage. Perfect for weddings, festive occasions, or evening celebrations, this saree is a radiant blend of tradition and glamour, designed to make every gaze linger.'
+        },
+        {
+          id:'SV-P102',
+          name:'Neelambari Banarasi',
+          price: 3499,
+          img:'assets/party/party2.jpeg',
+          video:'assets/party/party2.mp4',
+          meaning:'Sky-draped blue, calm regality',
+          blouseAvailable: true,
+          desc:'The Neelambari Banarasi Saree is a vision in turquoise teal, shimmering with rich golden zari butas across the body. Its border carries intricate floral and vine detailing, while the grand pallu reveals a tapestry of paisley and jaal motifs that speak of centuries-old Banaras craftsmanship. A saree that combines freshness of color with regal heritage, making it the perfect choice for weddings, festive nights, and grand celebrations.'
+        },
+        {
+          id:'SV-P103',
+          name:'Raasrang Banarasi',
+          price: 2999,
+          img:'assets/party/party3.jpeg',
+          video:'assets/party/party3.mp4',
+          meaning:'Divine dance in zari',
+          blouseAvailable: true,
+          desc:'Celebrate divine tradition with the Raasrang Banarasi. Woven in vibrant mustard yellow silk, the saree features dainty motifs across the body and a rich red border glowing with zari artistry. The highlight lies in its pallu — a breathtaking tableau of Krishna Raas Leela, woven in golden zari with intricate figures and floral accents. A perfect drape for weddings, temple occasions, and cultural celebrations, Raasrang is heritage woven in threads of devotion and festivity.'
+        },
+        {
+          id:'SV-P104',
+          name:'Meghna Emerald Banarasi',
+          price: 4999,
+          img:'assets/party/party4.jpeg',
+          video:'assets/party/party4.mp4',
+          meaning:'Monsoon green, jewel shimmer',
+          blouseAvailable: true,
+          desc:'Wrap yourself in the elegance of Banaras with the Meghna Emerald Banarasi. Woven in a regal bottle-green base, this saree shines with antique golden zari that highlights every intricate motif. The body is adorned with dainty buta work, while the grand pallu unfolds into a masterpiece — paisley and floral jaal patterns enriched with meenakari hints of turquoise blue. Perfect for weddings, festive nights, or heirloom occasions, this saree is more than attire — it’s heritage reimagined.'
+        },
+        {
+          id:'SV-P105',
+          name:'Surangana Banarasi',
+          price: 2499,
+          img:'assets/party/party5.jpeg',
+          video:'assets/party/party5.mp4',
+          meaning:'Golden muse, sacred glow',
+          blouseAvailable: true,
+          desc:'Radiate traditional elegance with the Surangana Banarasi Saree. The mustard-orange silk body is adorned with golden butis, bringing a soft festive shimmer. The deep red border frames the saree with intricate zari motifs, while the pallu blossoms into grand temple-inspired designs — paisley and floral jaal woven in rich golden zari. A saree that balances devotion and glamour, Surangana is perfect for weddings, pujas, and cultural celebrations.'
+        },
+        {
+          id:'SV-P106',
+          name:'Meghmalhar',
+          price: 4999,
+          img:'assets/party/party6.jpeg',
+          video:'assets/party/party6.mp4',
+          meaning:'Rain raga in silk',
+          blouseAvailable: true,
+          desc:'Meghmalhar is a celebration of Banarasi tradition in wine-purple and teal silk. The body is adorned with dainty golden butis, while the lower half and pallu are richly decorated with paisley and floral jaal, woven in fine golden zari. The box-style design on the pallu adds structure and grandeur, making this saree a perfect choice for festive nights, weddings, and regal gatherings.'
+        },
+        {
+          id:'SV-P107',
+          name:'Shyamoli',
+          price: 5199,
+          img:'assets/party/party7.jpeg',
+          video:'assets/party/party7.mp4',
+          meaning:'Prosperous green, serene shine',
+          blouseAvailable: true,
+          desc:'Shyamoli is a luxurious sea-green silk saree woven with luminous silver-gold zari. The body carries dainty butis that glisten softly, while the border is adorned with delicate floral detailing. The highlight is its magnificent pallu — an intricate panel of lattice-inspired zari work with floral vines, enriched with pink and navy accents that add depth and drama. A drape of prosperity and celebration, Shyamoli is perfect for weddings, receptions, and timeless festivities.'
+        },
+        {
+          id:'SV-P108',
+          name:'Rajmohini',
+          price: 7999,
+          img:'assets/party/party8.jpeg',
+          video:'assets/party/party8.mp4',
+          meaning:'Royal enchantment in magenta',
+          blouseAvailable: true,
+          desc:'Rajmohini is a masterpiece in magenta and navy silk, woven with lavish golden zari in a jaal pattern that exudes grandeur. The dual-tone body symbolizes balance between vibrance and elegance, while the broad intricately woven border frames it with a regal touch. Ideal for weddings, receptions, and grand festive nights, Rajmohini makes you glow with timeless luxury.'
+        },
+      ]
+    };
+
+    const grid=document.getElementById('grid');
+    const detail=document.getElementById('detail');
+
+    const sparkle=()=>{const s=document.createElement('div');s.className='sparkle';s.style.left=Math.random()*100+'vw';s.style.bottom='-10vh';s.style.animationDuration=(5+Math.random()*6)+'s';s.style.filter='drop-shadow(0 0 6px rgba(255,255,255,.6))';document.body.appendChild(s);setTimeout(()=>s.remove(),12000)};
+    setInterval(sparkle,800);
+
+    const chime=()=>{try{const a=new (window.AudioContext||window.webkitAudioContext)();const o=a.createOscillator();const g=a.createGain();o.type='triangle';o.frequency.value=740;g.gain.setValueAtTime(0.0001,a.currentTime);g.gain.exponentialRampToValueAtTime(0.2,a.currentTime+0.02);g.gain.exponentialRampToValueAtTime(0.0001,a.currentTime+0.5);o.connect(g).connect(a.destination);o.start();o.stop(a.currentTime+0.52)}catch(e){}};
+    const swoosh=()=>{try{const a=new (window.AudioContext||window.webkitAudioContext)();const n=a.createBuffer(1,a.sampleRate*.5,a.sampleRate);const d=n.getChannelData(0);for(let i=0;i<d.length;i++){d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,2)}const s=a.createBufferSource();const g=a.createGain();g.gain.setValueAtTime(0.0001,a.currentTime);g.gain.exponentialRampToValueAtTime(0.25,a.currentTime+0.1);g.gain.exponentialRampToValueAtTime(0.0001,a.currentTime+0.5);s.buffer=n;s.connect(g).connect(a.destination);s.start()}catch(e){}};
+
+    window.addEventListener('load',()=>{swoosh();setTimeout(()=>document.querySelector('.sv-curtain')?.remove(),2500)});
+
+    function money(n){return '₹'+n.toLocaleString('en-IN')}
+
+    function renderGrid(kind){
+      const items=PRODUCTS[kind]||[];
+      grid.innerHTML=items.map(p=>`
+        <article class="card" data-kind="${kind}" data-id="${p.id}" aria-label="${p.name}${p.meaning ? ' — '+p.meaning : ''}">
+          <div class="img ${p.img ? 'has-photo' : ''}"
+               style="${p.img?`background-image:url('${p.img}'); background-size:cover; background-position:center;`:''}"
+               role="img"
+               title="${p.name}${p.meaning ? ' — '+p.meaning : ''}"
+               aria-label="${p.name} preview"></div>
+          <div class="meta">
+            <div class="name">${p.name}</div>
+            <div class="price">${money(p.price)}</div>
+          </div>
+        </article>`).join('');
+      detail.classList.remove('active');
+      window.scrollTo({top:grid.offsetTop-80,behavior:'smooth'})
+    }
+
+    function renderDetail(kind,id){
+      const p=(PRODUCTS[kind]||[]).find(x=>x.id===id); if(!p) return;
+      const basePitch='This masterpiece is crafted for the woman who adores tradition yet lives in the now. The drape flatters, the weave speaks, and the shimmer ensures every gaze lingers just a moment longer. Make it yours—before the next soirée does.';
+      const waText = [
+        'Hi Siree! I would like to place an order for',
+        p.name + ' (Unique ID: '+p.id+').',
+        p.meaning ? 'Name meaning: '+p.meaning : ''
+      ].filter(Boolean).join(' ');
+      const wa=`https://wa.me/917021779181?text=${encodeURIComponent(waText)}`;
+
+      // Build blouse availability line
+      const blouseLine = p.blouseAvailable
+        ? '<strong>Blouse piece:</strong> <span style="color:#137a3d;font-weight:700">Available</span> (unstitched). The blouse worn by the model may be for styling/photography only — please check the blouse piece image for the actual design.'
+        : '<strong>Blouse piece:</strong> <span style="color:#9b1b1b;font-weight:700">Not included</span>.';
+
+      detail.innerHTML=`
+        <div>
+          <span class="badge">${kind==='daily'?'Daily Wear':'Party Wear'}</span>
+          <span class="badge">ID: ${p.id}</span>
+          ${p.meaning ? `<span class=\"meaning-pill\" title=\"Name meaning\">${p.meaning}</span>` : ``}
+        </div>
+
+        <h2 class="glitter" style="font-family:'Cinzel',serif; margin:10px 0 6px; font-size:clamp(22px,3vw,32px)">${p.name}</h2>
+        ${p.meaning ? `<div class=\"meaning-line\"><em>${p.meaning}</em></div>` : ``}
+
+        <div id="media-anchor"></div>
+        <div class="media">
+          <img src="${p.img||''}" alt="${p.name}">
+          <div>
+            <video src="${p.video||''}" controls playsinline style="background:#0f2037"></video>
+            <div style="margin-top:14px; font-size:18px">Price: <span class="price">${money(p.price)}</span></div>
+            <p style="margin-top:12px; line-height:1.7">${p.desc || basePitch}</p>
+
+            <!-- Saree details block -->
+            <div class="specs" aria-label="Saree details">
+              <h3>Saree Details</h3>
+              <ul>
+                <li>${blouseLine}</li>
+                <li><strong>Size & Fit:</strong> Length ~ <em>6 metres+</em>; Width ~ <em>1.06 metres</em> (approx.).</li>
+                <li><strong>Fabric:</strong> Silk Blend.</li>
+              </ul>
+              <div class="policy-note">Delivery is <strong>free & same-day</strong> wherever feasible. Since we personally hand-deliver and help you verify the product at your doorstep, <strong>returns aren’t accepted after delivery confirmation</strong>. Reach us on WhatsApp for any pre-purchase queries — we’ll be happy to help.</div>
+            </div>
+
+            <div class="cta">
+              <a class="whatsapp" href="${wa}" target="_blank" rel="noopener">WhatsApp Unique ID to Order</a>
+              <div style="margin-top:10px; font-size:14px; opacity:.95;color:#7a6a38">Talk to the founder—Sireejaa, IIT alumni—before you order</div>
+            </div>
+          </div>
+        </div>
+        <a class="back" onclick="goBack()">← Back to collection</a>`;
+
+      detail.classList.add('active'); chime();
+
+      // Smooth scroll directly to the image/video area
+      const anchor = detail.querySelector('#media-anchor');
+      if(anchor){
+        const y = anchor.getBoundingClientRect().top + window.pageYOffset - 80; // offset for sticky header
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+
+    function goBack(){detail.classList.remove('active')}
+
+    document.querySelectorAll('.cat-btn').forEach(btn=>
+      btn.addEventListener('click',()=>{renderGrid(btn.dataset.cat);chime()}));
+
+    grid.addEventListener('click',e=>{
+      const card=e.target.closest('.card');if(!card) return;
+      renderDetail(card.dataset.kind,card.dataset.id)
+    });
+
+    document.getElementById('year').textContent=new Date().getFullYear();
+    setTimeout(()=>{renderGrid('party')},1100);
+  </script>
+</body>
+</html>
